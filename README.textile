@@ -1,0 +1,11 @@
+h1. [di]base – a small collection of JavaScript helpers
+
+Currently, [di]base only contains a small function that initializes the global @di@ object and adds a proxy for the "Console API":http://getfirebug.com/wiki/index.php/Console_API as @di.con@.
+
+h2. Global object
+
+The global @di@ object allows other modules to hook into the global namespace. For example, a module called _whatever_ can simply put its methods and other public pieces in an object stored in @di.whatever@.
+
+h2. Console API proxy
+
+The Console API proxy allows other code to always use calls like @di.con.log()@, regardless of whether the global @console@ object is actually available or not. If it’s not, simply nothing happens when any of the @di.con@ methods are called. You can also disable all @di.con@ method calls by setting @di.usecon@ to a falsy value.
